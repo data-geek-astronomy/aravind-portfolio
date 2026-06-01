@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Aravind Kumar Nalukurthi - AI Engineer and Data Engineer portfolio.">
+    <title>Aravind Kumar Nalukurthi | AI & Data Engineer</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <canvas id="neural-canvas" aria-hidden="true"></canvas>
+
+    <header class="site-header" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Aravind Kumar home">
+        <span class="brand-mark">AK</span>
+        <span>Aravind Kumar</span>
+      </a>
+      <nav class="nav-links" aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="header-action" href="assets/aravindkumar-resume.pdf" download>Resume</a>
+    </header>
+
+    <main id="home">
+      <section class="hero section">
+        <div class="hero-copy">
+          <p class="eyebrow">AI Engineer • Data Engineer • LLM Systems</p>
+          <h1>Building agentic AI and large-scale data systems that make decisions safer, faster, and easier to trust.</h1>
+          <p class="hero-text">
+            I design LLM-powered workflows, RAG pipelines, and streaming data platforms with Python, Spark, SQL, and cloud-native infrastructure.
+          </p>
+          <div class="contact-pills" aria-label="Contact details">
+            <span>San Francisco, California</span>
+            <a href="mailto:analukur@asu.edu">ASU Email</a>
+            <a href="mailto:aravind.kumar.nalukurthi@gmail.com">Gmail</a>
+            <a href="tel:+14809311899">(480) 931-1899</a>
+            <a href="https://github.com/data-geek-astronomy" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/aravind-kumar-nalukurthi-45b2a41b2/" target="_blank" rel="noreferrer">LinkedIn</a>
+          </div>
+          <div class="hero-actions" aria-label="Primary actions">
+            <a class="button primary" href="#projects">View Projects</a>
+            <a class="button secondary" href="#contact">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="hero-stage" aria-label="Interactive AI systems visualization">
+          <div class="orbit-shell" id="orbitShell">
+            <div class="core-node">
+              <span>AI</span>
+              <small>Systems</small>
+            </div>
+            <div class="orbit orbit-one"><span>RAG</span></div>
+            <div class="orbit orbit-two"><span>Spark</span></div>
+            <div class="orbit orbit-three"><span>Agents</span></div>
+            <div class="orbit orbit-four"><span>Kafka</span></div>
+            <div class="orbit orbit-five"><span>AWS</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics-strip" aria-label="Career highlights">
+        <article>
+          <strong>50M+</strong>
+          <span>daily auction events processed</span>
+        </article>
+        <article>
+          <strong>65%</strong>
+          <span>query performance improvement</span>
+        </article>
+        <article>
+          <strong>24.6%</strong>
+          <span>decision support consistency gain</span>
+        </article>
+        <article>
+          <strong>AUC 0.94</strong>
+          <span>fraud model performance</span>
+        </article>
+      </section>
+
+      <section id="work" class="section">
+        <div class="section-heading">
+          <p class="eyebrow">Experience</p>
+          <h2>Applied AI, data platforms, and production workflows.</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-card tilt-card">
+            <div class="timeline-date">Jan 2026 - May 2026</div>
+            <h3>AI Engineer Intern</h3>
+            <p class="company">Optimalex • New York City</p>
+            <p>Built LLM-powered agentic components with structured prompting, autonomous tool calling, MCP context routing, and grounded RAG pipelines for regulated insurance workflows.</p>
+          </article>
+          <article class="timeline-card tilt-card">
+            <div class="timeline-date">Nov 2024 - May 2025</div>
+            <h3>Research Assistant, Artificial Intelligence</h3>
+            <p class="company">Arizona State University • Tempe</p>
+            <p>Evaluated text generation, summarization, intent understanding, vector retrieval, and agentic prototypes that improved reliability in academic AI tools.</p>
+          </article>
+          <article class="timeline-card tilt-card">
+            <div class="timeline-date">Jul 2022 - Jul 2024</div>
+            <h3>Data Engineer</h3>
+            <p class="company">Uber Technologies via Nineleaps</p>
+            <p>Designed Kafka, Spark, Airflow, Hive, Redshift, and AWS pipelines supporting advertiser reporting, fraud detection, budget optimization, and real-time decisioning.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="projects" class="section project-section">
+        <div class="section-heading">
+          <p class="eyebrow">Selected Projects</p>
+          <h2>Interactive systems with measurable business lift.</h2>
+        </div>
+        <div class="project-grid">
+          <article class="project-card tilt-card">
+            <div class="project-visual triage-visual" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">Python • FastAPI • LangChain • Pinecone • Redis • AWS Lambda</p>
+              <h3>AI-Driven Customer Issue Triage Agent</h3>
+              <p>End-to-end LLM triage agent that retrieves prior resolutions with RAG and executes tool calls for SQL lookups, policy checks, and status updates.</p>
+              <div class="impact-row">
+                <span>63% lower manual triage</span>
+                <span>Under 10 sec response</span>
+              </div>
+            </div>
+          </article>
+          <article class="project-card tilt-card">
+            <div class="project-visual auction-visual" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="project-content">
+              <p class="project-kicker">Python • SQL • PySpark • Isolation Forest • XGBoost</p>
+              <h3>Ads Bid Health Monitor</h3>
+              <p>Auction quality framework that surfaced eCPM variance drivers, fraud signals, and anomaly patterns across high-volume ad auctions.</p>
+              <div class="impact-row">
+                <span>500M+ daily auctions</span>
+                <span>8x fraud signal found</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="skills" class="section skills-section">
+        <div class="section-heading">
+          <p class="eyebrow">Technical Stack</p>
+          <h2>From model behavior to data infrastructure.</h2>
+        </div>
+        <div class="skills-board">
+          <article class="skill-panel">
+            <h3>AI & GenAI</h3>
+            <p>LLMs, RAG pipelines, prompt engineering, intelligent agents, multi-agent workflows, model evaluation, Hugging Face, PyTorch, TensorFlow, NLP.</p>
+          </article>
+          <article class="skill-panel">
+            <h3>Data Engineering</h3>
+            <p>Apache Spark, PySpark, SparkSQL, Kafka, Flink, Airflow, ETL/ELT, event streams, orchestration, dimensional modeling.</p>
+          </article>
+          <article class="skill-panel">
+            <h3>Cloud & Platforms</h3>
+            <p>AWS S3, EC2, Lambda, EMR, Glue, IAM, GCP, Docker, Kubernetes, Databricks, Snowflake, Delta Lake, Iceberg.</p>
+          </article>
+          <article class="skill-panel">
+            <h3>Engineering</h3>
+            <p>Python, Java, C, C++, Scala, REST APIs, WebSockets, distributed systems, microservices, CI/CD, PostgreSQL, Redis, Cassandra.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section education-section">
+        <div class="section-heading">
+          <p class="eyebrow">Education</p>
+          <h2>Computing, decision analytics, and engineering foundations.</h2>
+        </div>
+        <div class="education-grid">
+          <article class="education-card">
+            <h3>Arizona State University</h3>
+            <p>Master's in Data Science, Analytics and Engineering</p>
+            <span>Aug 2024 - May 2026</span>
+          </article>
+          <article class="education-card">
+            <h3>National Institute of Technology, Calicut</h3>
+            <p>B.Tech in Electronics and Communication Engineering</p>
+            <span>Jul 2018 - Jun 2022</span>
+          </article>
+        </div>
+      </section>
+
+      <section id="contact" class="section contact-section">
+        <div>
+          <p class="eyebrow">Contact</p>
+          <h2>Let’s build reliable AI systems and the data foundations behind them.</h2>
+          <div class="contact-grid" aria-label="Contact links">
+            <a href="mailto:analukur@asu.edu">
+              <span>ASU Email</span>
+              <strong>analukur@asu.edu</strong>
+            </a>
+            <a href="mailto:aravind.kumar.nalukurthi@gmail.com">
+              <span>Gmail</span>
+              <strong>aravind.kumar.nalukurthi@gmail.com</strong>
+            </a>
+            <a href="tel:+14809311899">
+              <span>Phone</span>
+              <strong>(480) 931-1899</strong>
+            </a>
+            <a href="https://github.com/data-geek-astronomy" target="_blank" rel="noreferrer">
+              <span>Code</span>
+              <strong>GitHub</strong>
+            </a>
+            <a href="https://www.linkedin.com/in/aravind-kumar-nalukurthi-45b2a41b2/" target="_blank" rel="noreferrer">
+              <span>Network</span>
+              <strong>LinkedIn</strong>
+            </a>
+            <div>
+              <span>Location</span>
+              <strong>San Francisco, California</strong>
+            </div>
+          </div>
+        </div>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:aravind.kumar.nalukurthi@gmail.com">Start a Conversation</a>
+          <a class="button secondary" href="assets/aravindkumar-resume.pdf" download>Download Resume</a>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
