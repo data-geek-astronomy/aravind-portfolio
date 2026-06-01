@@ -1,5 +1,7 @@
 const canvas = document.getElementById("neural-canvas");
 const ctx = canvas.getContext("2d");
+const cursorDot = document.querySelector(".cursor-dot");
+const cursorRing = document.querySelector(".cursor-ring");
 const orbitShell = document.getElementById("orbitShell");
 const cards = document.querySelectorAll(".tilt-card");
 const repoRail = document.getElementById("repoRail");
@@ -10,6 +12,7 @@ let height = 0;
 let pixelRatio = 1;
 let scrollProgress = 0;
 let pointer = { x: 0.5, y: 0.5 };
+let cursorVisible = false;
 let nodes = [];
 
 function resizeCanvas() {
@@ -113,6 +116,17 @@ cards.forEach((card) => {
 });
 
 window.addEventListener("pointermove", (event) => {
+  const isFinePointer = event.pointerType === "mouse" || event.pointerType === "pen";
+
+  if (isFinePointer && cursorDot && cursorRing) {
+    cursorVisible = true;
+    document.body.classList.add("cursor-visible");
+    cursorDot.style.left = `${event.clientX}px`;
+    cursorDot.style.top = `${event.clientY}px`;
+    cursorRing.style.left = `${event.clientX}px`;
+    cursorRing.style.top = `${event.clientY}px`;
+  }
+
   pointer = {
     x: event.clientX / Math.max(1, window.innerWidth),
     y: event.clientY / Math.max(1, window.innerHeight)
@@ -123,6 +137,31 @@ window.addEventListener("pointermove", (event) => {
     const rotateX = 58 - (pointer.y - 0.5) * 12;
     orbitShell.style.transform = `rotateX(${rotateX}deg) rotateZ(-28deg) rotateY(${rotateY}deg)`;
   }
+});
+
+const hoverSelector = "a, button, [role='button'], .project-card, .repo-card, .skill-panel, .timeline-card, .education-card";
+
+window.addEventListener("pointerover", (event) => {
+  if (event.target.closest(hoverSelector)) {
+    document.body.classList.add("cursor-hover");
+  }
+});
+
+window.addEventListener("pointerout", (event) => {
+  if (event.target.closest(hoverSelector) && !event.relatedTarget?.closest?.(hoverSelector)) {
+    document.body.classList.remove("cursor-hover");
+  }
+});
+
+window.addEventListener("pointerleave", () => {
+  document.body.classList.remove("cursor-hover");
+  if (!cursorVisible) {
+    document.body.classList.remove("cursor-visible");
+  }
+});
+
+window.addEventListener("blur", () => {
+  document.body.classList.remove("cursor-hover", "cursor-visible");
 });
 
 window.addEventListener("scroll", updateScrollProgress, { passive: true });
