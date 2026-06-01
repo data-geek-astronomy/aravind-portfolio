@@ -137,8 +137,14 @@ main {
 }
 
 .section {
+  min-height: auto;
+  padding: 86px 0 56px;
+}
+
+.hero {
   min-height: 100vh;
-  padding: 132px 0 90px;
+  padding-top: 132px;
+  padding-bottom: 72px;
 }
 
 .hero {
@@ -354,13 +360,13 @@ h3 {
 .skills-board,
 .education-grid {
   display: grid;
-  gap: 18px;
+  gap: 14px;
 }
 
 .metrics-strip {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   min-height: auto;
-  margin: -72px 0 50px;
+  margin: -28px 0 34px;
 }
 
 .metrics-strip article,
@@ -400,12 +406,12 @@ h3 {
 .section-heading {
   display: grid;
   gap: 0;
-  margin-bottom: 34px;
+  margin-bottom: 24px;
 }
 
 .section-note {
   max-width: 640px;
-  margin: 10px 0 0;
+  margin: 8px 0 0;
   color: var(--muted);
   line-height: 1.65;
 }
@@ -413,6 +419,7 @@ h3 {
 .timeline {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   perspective: 1400px;
+  margin-top: 6px;
 }
 
 .timeline-card,
@@ -450,6 +457,7 @@ h3 {
 
 .project-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 6px;
 }
 
 .project-card {
@@ -563,6 +571,7 @@ h3 {
 
 .skills-board {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 6px;
 }
 
 .skill-panel {
@@ -575,6 +584,7 @@ h3 {
 
 .education-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 6px;
 }
 
 .repo-rail {
@@ -701,8 +711,8 @@ h3 {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: end;
   min-height: auto;
-  margin-bottom: 70px;
-  padding: 42px;
+  margin-bottom: 28px;
+  padding: 36px 42px;
 }
 
 .contact-section h2 {
@@ -839,13 +849,13 @@ h3 {
   }
 
   .section {
-    min-height: auto;
-    padding: 110px 0 66px;
+    padding: 78px 0 50px;
   }
 
   .hero {
     min-height: 100vh;
     padding-top: 168px;
+    padding-bottom: 58px;
   }
 
   h1 {
