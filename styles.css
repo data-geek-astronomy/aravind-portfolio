@@ -480,6 +480,9 @@ h3 {
 }
 
 .project-visual-image {
+  display: grid;
+  place-items: center;
+  padding: 14px;
   background: #10141d;
 }
 
@@ -487,9 +490,9 @@ h3 {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
-  transform: scale(1.01);
+  border-radius: 6px;
 }
 
 .project-content {
