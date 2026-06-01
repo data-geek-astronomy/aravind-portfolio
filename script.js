@@ -2,6 +2,8 @@ const canvas = document.getElementById("neural-canvas");
 const ctx = canvas.getContext("2d");
 const orbitShell = document.getElementById("orbitShell");
 const cards = document.querySelectorAll(".tilt-card");
+const repoRail = document.getElementById("repoRail");
+const repoGrid = document.getElementById("repoGrid");
 
 let width = 0;
 let height = 0;
@@ -129,3 +131,189 @@ window.addEventListener("resize", resizeCanvas);
 resizeCanvas();
 updateScrollProgress();
 drawScene();
+
+const repoData = [
+  {
+    name: "aravind-portfolio",
+    description: "Interactive 3D portfolio website built around your resume and public work.",
+    language: "CSS",
+    updatedAt: "2026-06-01T06:33:17Z",
+    url: "https://github.com/data-geek-astronomy/aravind-portfolio"
+  },
+  {
+    name: "multi-modal-vision-pipeline",
+    description: "Python pipeline for multi-modal vision experiments.",
+    language: "Python",
+    updatedAt: "2026-04-14T19:49:14Z",
+    url: "https://github.com/data-geek-astronomy/multi-modal-vision-pipeline"
+  },
+  {
+    name: "ads-bid-health-monitor",
+    description: "Monitoring framework for auction health and fraud signals.",
+    language: "Python",
+    updatedAt: "2026-04-13T07:52:01Z",
+    url: "https://github.com/data-geek-astronomy/ads-bid-health-monitor"
+  },
+  {
+    name: "ad-auction-simulator",
+    description: "Auction simulation playground for ad decisioning experiments.",
+    language: "Python",
+    updatedAt: "2026-04-13T07:03:25Z",
+    url: "https://github.com/data-geek-astronomy/ad-auction-simulator"
+  },
+  {
+    name: "safety-query-system",
+    description: "Safety-oriented query system for controlled responses and retrieval.",
+    language: "Python",
+    updatedAt: "2026-02-18T18:04:08Z",
+    url: "https://github.com/data-geek-astronomy/safety-query-system"
+  },
+  {
+    name: "chem-rag",
+    description: "Retrieval-augmented chemistry assistant and notebook experiments.",
+    language: "Python",
+    updatedAt: "2026-02-18T03:24:19Z",
+    url: "https://github.com/data-geek-astronomy/chem-rag"
+  },
+  {
+    name: "neetcode-submissions-9smhtxy4",
+    description: "Algorithm practice repository with NeetCode.io submissions.",
+    language: "Python",
+    updatedAt: "2026-04-15T18:50:48Z",
+    url: "https://github.com/data-geek-astronomy/neetcode-submissions-9smhtxy4"
+  },
+  {
+    name: "gender-detection",
+    description: "Notebook-based classification experiment for gender detection.",
+    language: "Jupyter Notebook",
+    updatedAt: "2026-05-14T05:30:14Z",
+    url: "https://github.com/data-geek-astronomy/gender-detection"
+  },
+  {
+    name: "netflix_eda",
+    description: "Exploratory notebook for Netflix dataset analysis.",
+    language: "Jupyter Notebook",
+    updatedAt: "2026-05-14T00:24:45Z",
+    url: "https://github.com/data-geek-astronomy/netflix_eda"
+  },
+  {
+    name: "airbnb_eda",
+    description: "Exploratory notebook for Airbnb dataset analysis.",
+    language: "Jupyter Notebook",
+    updatedAt: "2026-05-12T01:35:57Z",
+    url: "https://github.com/data-geek-astronomy/airbnb_eda"
+  },
+  {
+    name: "Diabetes-prediction",
+    description: "Notebook-based diabetes prediction model.",
+    language: "Jupyter Notebook",
+    updatedAt: "2025-07-10T18:08:44Z",
+    url: "https://github.com/data-geek-astronomy/Diabetes-prediction"
+  },
+  {
+    name: "Iris-Flower-Classification",
+    description: "Classic flower classification notebook project.",
+    language: "Jupyter Notebook",
+    updatedAt: "2025-06-27T18:58:37Z",
+    url: "https://github.com/data-geek-astronomy/Iris-Flower-Classification"
+  },
+  {
+    name: "Breast-Cancer-Classification",
+    description: "Classification project focused on breast cancer prediction.",
+    language: "Python",
+    updatedAt: "2024-04-26T22:55:38Z",
+    url: "https://github.com/data-geek-astronomy/Breast-Cancer-Classification"
+  },
+  {
+    name: "Human-Emotion-Recognition-from-Text-and-Voice-Data",
+    description: "Emotion recognition project using text and voice features.",
+    language: "Python",
+    updatedAt: "2024-01-19T08:54:01Z",
+    url: "https://github.com/data-geek-astronomy/Human-Emotion-Recognition-from-Text-and-Voice-Data"
+  },
+  {
+    name: "twitter-sentimental-analysis",
+    description: "Twitter sentiment analysis project.",
+    language: "Python",
+    updatedAt: "2024-01-19T08:41:22Z",
+    url: "https://github.com/data-geek-astronomy/twitter-sentimental-analysis"
+  },
+  {
+    name: "data-geek-astronomy",
+    description: "GitHub profile repository for the account itself.",
+    language: "GitHub",
+    updatedAt: "2025-03-04T03:35:06Z",
+    url: "https://github.com/data-geek-astronomy/data-geek-astronomy"
+  }
+];
+
+function formatUpdatedAt(value) {
+  const date = new Date(value);
+  return new Intl.DateTimeFormat("en", { month: "short", year: "numeric" }).format(date);
+}
+
+function accentForIndex(index) {
+  const palette = ["#58b8ff", "#35d399", "#f6c15f", "#ff7b6e", "#a78bfa"];
+  return palette[index % palette.length];
+}
+
+function renderRepos() {
+  if (!repoGrid) return;
+
+  repoGrid.innerHTML = repoData
+    .map((repo, index) => {
+      const accent = accentForIndex(index);
+      return `
+        <article class="repo-card tilt-card in-view" style="--accent:${accent}">
+          <div class="repo-accent"></div>
+          <div class="repo-top">
+            <p class="project-kicker">${repo.language}</p>
+            <h3 class="repo-name">${repo.name}</h3>
+            <p class="repo-desc">${repo.description}</p>
+          </div>
+          <div>
+            <div class="repo-meta">
+              <span>Updated ${formatUpdatedAt(repo.updatedAt)}</span>
+              <span>Public repo</span>
+            </div>
+            <div class="repo-footer">
+              <span class="eyebrow" style="margin:0;color:${accent};">GitHub</span>
+              <a class="repo-link" href="${repo.url}" target="_blank" rel="noreferrer">Open Repo</a>
+            </div>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+renderRepos();
+
+if (repoRail) {
+  let isDragging = false;
+  let dragStartX = 0;
+  let scrollStartX = 0;
+
+  repoRail.addEventListener("pointerdown", (event) => {
+    isDragging = true;
+    dragStartX = event.clientX;
+    scrollStartX = repoRail.scrollLeft;
+    repoRail.classList.add("is-dragging");
+    repoRail.setPointerCapture(event.pointerId);
+  });
+
+  repoRail.addEventListener("pointermove", (event) => {
+    if (!isDragging) return;
+    const delta = event.clientX - dragStartX;
+    repoRail.scrollLeft = scrollStartX - delta;
+  });
+
+  const stopDrag = () => {
+    isDragging = false;
+    repoRail.classList.remove("is-dragging");
+  };
+
+  repoRail.addEventListener("pointerup", stopDrag);
+  repoRail.addEventListener("pointercancel", stopDrag);
+  repoRail.addEventListener("pointerleave", stopDrag);
+}
