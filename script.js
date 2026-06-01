@@ -134,13 +134,6 @@ drawScene();
 
 const repoData = [
   {
-    name: "aravind-portfolio",
-    description: "Interactive 3D portfolio website built around your resume and public work.",
-    language: "CSS",
-    updatedAt: "2026-06-01T06:33:17Z",
-    url: "https://github.com/data-geek-astronomy/aravind-portfolio"
-  },
-  {
     name: "multi-modal-vision-pipeline",
     description: "Python pipeline for multi-modal vision experiments.",
     language: "Python",
@@ -174,13 +167,6 @@ const repoData = [
     language: "Python",
     updatedAt: "2026-02-18T03:24:19Z",
     url: "https://github.com/data-geek-astronomy/chem-rag"
-  },
-  {
-    name: "neetcode-submissions-9smhtxy4",
-    description: "Algorithm practice repository with NeetCode.io submissions.",
-    language: "Python",
-    updatedAt: "2026-04-15T18:50:48Z",
-    url: "https://github.com/data-geek-astronomy/neetcode-submissions-9smhtxy4"
   },
   {
     name: "gender-detection",
@@ -237,13 +223,6 @@ const repoData = [
     language: "Python",
     updatedAt: "2024-01-19T08:41:22Z",
     url: "https://github.com/data-geek-astronomy/twitter-sentimental-analysis"
-  },
-  {
-    name: "data-geek-astronomy",
-    description: "GitHub profile repository for the account itself.",
-    language: "GitHub",
-    updatedAt: "2025-03-04T03:35:06Z",
-    url: "https://github.com/data-geek-astronomy/data-geek-astronomy"
   }
 ];
 
@@ -278,7 +257,7 @@ function renderRepos() {
             </div>
             <div class="repo-footer">
               <span class="eyebrow" style="margin:0;color:${accent};">GitHub</span>
-              <a class="repo-link" href="${repo.url}" target="_blank" rel="noreferrer">Open Repo</a>
+              <a class="repo-link" href="${repo.url}" aria-label="Open ${repo.name} on GitHub">View on GitHub</a>
             </div>
           </div>
         </article>
@@ -295,6 +274,9 @@ if (repoRail) {
   let scrollStartX = 0;
 
   repoRail.addEventListener("pointerdown", (event) => {
+    if (event.target.closest("a")) {
+      return;
+    }
     isDragging = true;
     dragStartX = event.clientX;
     scrollStartX = repoRail.scrollLeft;
