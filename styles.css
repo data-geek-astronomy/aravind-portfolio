@@ -479,68 +479,17 @@ h3 {
   border-radius: 8px;
 }
 
-.triage-visual span,
-.auction-visual span {
-  position: absolute;
+.project-visual-image {
+  background: #10141d;
+}
+
+.project-visual-image img {
   display: block;
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.14);
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
-}
-
-.triage-visual span:nth-child(1) {
-  top: 54px;
-  left: 48px;
-  width: 42%;
-  height: 42px;
-}
-
-.triage-visual span:nth-child(2) {
-  top: 116px;
-  right: 52px;
-  width: 46%;
-  height: 48px;
-  background: rgba(53, 211, 153, 0.2);
-}
-
-.triage-visual span:nth-child(3) {
-  bottom: 45px;
-  left: 86px;
-  width: 58%;
-  height: 38px;
-  background: rgba(246, 193, 95, 0.2);
-}
-
-.auction-visual {
-  background: linear-gradient(135deg, rgba(246, 193, 95, 0.18), rgba(255, 123, 110, 0.2)), #10141d;
-}
-
-.auction-visual span {
-  bottom: 36px;
-  width: 13%;
-}
-
-.auction-visual span:nth-child(1) {
-  left: 14%;
-  height: 72px;
-}
-
-.auction-visual span:nth-child(2) {
-  left: 34%;
-  height: 128px;
-  background: rgba(255, 123, 110, 0.25);
-}
-
-.auction-visual span:nth-child(3) {
-  left: 54%;
-  height: 98px;
-  background: rgba(88, 184, 255, 0.22);
-}
-
-.auction-visual span:nth-child(4) {
-  left: 74%;
-  height: 164px;
-  background: rgba(53, 211, 153, 0.22);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  transform: scale(1.01);
 }
 
 .project-content {
